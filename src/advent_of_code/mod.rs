@@ -17,6 +17,6 @@ pub fn historian_hysteria() {
     println!("The similarity is: {similarity}");
 
     // Monday 02
-    let safe_report_count = mon_02::check_reports_safety("");
+    let safe_report_count = mon_02::check_reports_safety("./assets/day_2_reports_input");
     println!("There are {safe_report_count} safe reports");
 }

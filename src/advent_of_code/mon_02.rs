@@ -1,16 +1,9 @@
-use utils::calc_distance;
+use utils::{calc_distance, read_report_list};
 
 use super::*;
 
 pub fn check_reports_safety(input: &str) -> ReportSafety {
-    let report_list: [[Report; 5]; 6] = [
-        [7, 6, 4, 2, 1],
-        [1, 2, 7, 8, 9],
-        [9, 7, 6, 2, 1],
-        [1, 3, 2, 4, 5],
-        [8, 6, 4, 4, 1],
-        [1, 3, 6, 7, 9],
-    ];
+    let report_list = read_report_list(input);
 
     let mut safe_count: ReportSafety = 0;
 
@@ -25,6 +18,7 @@ pub fn check_reports_safety(input: &str) -> ReportSafety {
 
         let mut safe = true;
         let initial_direction: ReportDirection = get_report_direction(&report[0..=1]);
+        let mut problems_damped_count = 0;
 
         'report_check: for index in 1..report.len() {
             let prev = index - 1;
@@ -36,8 +30,11 @@ pub fn check_reports_safety(input: &str) -> ReportSafety {
                 || distance > 3
                 || direction != initial_direction
             {
-                safe = false;
-                break 'report_check;
+                if report_problem_dampener(&report) == false {
+                    safe = false;
+                    break 'report_check;
+                }
+                problems_damped_count += 1;
             }
         }
 
@@ -48,6 +45,9 @@ pub fn check_reports_safety(input: &str) -> ReportSafety {
 
     safe_count
 }
+
+// NOTE: the simples solition is by brute force...
+fn report_problem_dampener(report: &Vec<Report>) -> bool {}
 
 // FIXME: this is not a good function, since may try to access an invalid index
 fn get_report_direction(report: &[Report]) -> ReportDirection {

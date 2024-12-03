@@ -17,7 +17,20 @@ pub fn read_id_lists(input: &str) -> (Vec<Id>, Vec<Id>) {
     return (list_1, list_2);
 }
 
-pub fn read_report_list(input: &str) {}
+pub fn read_report_list(input: &str) -> Vec<Vec<Report>> {
+    let mut report_list: Vec<Vec<Report>> = vec![];
+
+    for report in read_to_string(input).unwrap().lines() {
+        let level_list = report.split(" ");
+        let mut report_vec: Vec<Report> = vec![];
+        for level in level_list {
+            report_vec.push(level.parse::<Report>().unwrap());
+        }
+        report_list.push(report_vec);
+    }
+
+    report_list
+}
 
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
