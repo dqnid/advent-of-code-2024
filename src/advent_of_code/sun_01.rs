@@ -1,8 +1,6 @@
-use std::ops::Sub;
-
 use super::*;
 
-pub fn sun_01(input: &str) -> Result<Key, ()> {
+pub fn get_key(input: &str) -> Result<Key, ()> {
     let mut key: Id = 0;
 
     let (mut list_1, mut list_2) = utils::read_id_lists(input);
@@ -17,7 +15,7 @@ pub fn sun_01(input: &str) -> Result<Key, ()> {
 
     // 2. Calc the distance between the pair elements
     for index in 0..list_1.len() {
-        key += calc_distance(list_1[index], list_2[index]);
+        key += utils::calc_distance(list_1[index], list_2[index]);
     }
 
     Ok(key)
@@ -40,14 +38,4 @@ pub fn get_similarity(input: &str) -> Similarity {
     }
 
     similarity
-}
-
-fn calc_distance<T>(num_1: T, num_2: T) -> T
-where
-    T: PartialOrd + Sub<Output = T>,
-{
-    if num_1 > num_2 {
-        return num_1 - num_2;
-    }
-    return num_2 - num_1;
 }
