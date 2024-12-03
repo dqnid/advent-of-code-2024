@@ -1,19 +1,11 @@
-use std::{fs::read_to_string, ops::Sub};
+use std::ops::Sub;
 
-type Number = i32;
-type Key = i32;
+use super::*;
 
 pub fn sun_01(input: &str) -> Result<Key, ()> {
-    let mut list_1: Vec<Number> = vec![];
-    let mut list_2: Vec<Number> = vec![];
-    let mut key: Number = 0;
+    let mut key: Id = 0;
 
-    for line in read_to_string(input).unwrap().lines() {
-        if let Some((one, two)) = line.split_once("   ") {
-            list_1.push(one.parse::<Number>().unwrap());
-            list_2.push(two.parse::<Number>().unwrap());
-        }
-    }
+    let (mut list_1, mut list_2) = utils::read_id_lists(input);
 
     if list_1.len() != list_2.len() {
         return Err(());
@@ -28,7 +20,26 @@ pub fn sun_01(input: &str) -> Result<Key, ()> {
         key += calc_distance(list_1[index], list_2[index]);
     }
 
-    Ok(Key)
+    Ok(key)
+}
+
+pub fn get_similarity(input: &str) -> Similarity {
+    let (left, right) = utils::read_id_lists(input);
+    let mut similarity: Similarity = 0;
+
+    // Multiply every number in left by the number of times that its present in right
+    // Then sum every result
+    for left_element in left {
+        let mut count = 0;
+        for right_elment in &right {
+            if left_element == *right_elment {
+                count += 1;
+            }
+        }
+        similarity += left_element * count;
+    }
+
+    similarity
 }
 
 fn calc_distance<T>(num_1: T, num_2: T) -> T
