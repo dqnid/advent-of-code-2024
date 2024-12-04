@@ -1,11 +1,11 @@
 # Advent Of Code 2024
 https://adventofcode.com/2024
 
-| Day | Puzzle name | Part 1 | Part 2 |
-| :---: | :--- | :---: | :---: |
-| 01 | Historian Hysteria | :pushpin: | :pushpin: |
-| 02 | Red-Nosed Reports | :pushpin: | :pushpin: |
-| 03 | Mull It Over |  |  |
+| Day | Puzzle name | Part 1 | Part 2 | Theme |
+| :---: | :--- | :---: | :---: | :--- |
+| 01 | Historian Hysteria | :pushpin: | :pushpin: | Arrays |
+| 02 | Red-Nosed Reports | :pushpin: | :pushpin: | Bidirectional arrays |
+| 03 | Mull It Over |  |  | Regex |
 | 04 |  |  |  |
 | 05 |  |  |  |
 | 06 |  |  |  |
