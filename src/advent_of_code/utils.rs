@@ -17,14 +17,14 @@ pub fn read_id_lists(input: &str) -> (Vec<Id>, Vec<Id>) {
     return (list_1, list_2);
 }
 
-pub fn read_report_list(input: &str) -> Vec<Vec<Report>> {
-    let mut report_list: Vec<Vec<Report>> = vec![];
+pub fn read_report_list(input: &str) -> Vec<Report> {
+    let mut report_list: Vec<Report> = vec![];
 
     for report in read_to_string(input).unwrap().lines() {
         let level_list = report.split(" ");
-        let mut report_vec: Vec<Report> = vec![];
+        let mut report_vec: Report = vec![];
         for level in level_list {
-            report_vec.push(level.parse::<Report>().unwrap());
+            report_vec.push(level.parse::<Level>().unwrap());
         }
         report_list.push(report_vec);
     }
