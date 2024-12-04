@@ -5,7 +5,7 @@ https://adventofcode.com/2024
 | :---: | :--- | :---: | :---: |
 | 01 | Historian Hysteria | :pushpin: | :pushpin: |
 | 02 | Red-Nosed Reports | :pushpin: | :pushpin: |
-| 03 |  |  |  |
+| 03 | Mull It Over |  |  |
 | 04 |  |  |  |
 | 05 |  |  |  |
 | 06 |  |  |  |

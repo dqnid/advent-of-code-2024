@@ -1,5 +1,6 @@
 mod mon_02;
 mod sun_01;
+mod tue_03;
 mod types;
 mod utils;
 
@@ -19,4 +20,11 @@ pub fn historian_hysteria() {
     // Monday 02
     let safe_report_count = mon_02::check_reports_safety("./assets/day_2_reports_input");
     println!("There are {safe_report_count} safe reports");
+
+    // Tuesday 03
+    let multiplication_added_result = tue_03::mull_it_over("./assets/day_3_instruction_input");
+    println!(
+        "The result of the sum of multiplications is {}",
+        multiplication_added_result
+    );
 }

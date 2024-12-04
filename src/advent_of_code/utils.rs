@@ -32,6 +32,16 @@ pub fn read_report_list(input: &str) -> Vec<Report> {
     report_list
 }
 
+pub fn read_instruction_input(input: &str) -> String {
+    let mut instructions = String::new();
+
+    for line in read_to_string(input).unwrap().lines() {
+        instructions.push_str(line);
+    }
+
+    instructions
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
