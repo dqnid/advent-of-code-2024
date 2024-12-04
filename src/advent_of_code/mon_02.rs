@@ -24,7 +24,7 @@ pub fn check_reports_safety(input: &str) -> ReportSafety {
 
 fn is_report_safe(report: &Report, apply_problem_dampener: bool) -> bool {
     if report.len() < 2 {
-        return false;
+        return true;
     }
     let mut safe = true;
     let initial_direction: ReportDirection = get_report_direction(&report[0..=1]);
@@ -32,14 +32,13 @@ fn is_report_safe(report: &Report, apply_problem_dampener: bool) -> bool {
     'report_check: for index in 1..report.len() {
         if !is_level_pair_valid(&report[index - 1], &report[index], &initial_direction) {
             if apply_problem_dampener {
-                let sliced_index_report =
-                    [&report[0..index], &report[index + 1..report.len()]].concat();
-                if is_report_safe(&sliced_index_report, false) {
-                    break 'report_check;
-                } else {
-                    let sliced_prev_report =
-                        [&report[0..index - 1], &report[index..report.len()]].concat();
-                    if is_report_safe(&sliced_prev_report, false) {
+                for internal_index in 0..report.len() {
+                    let sliced_index_report = [
+                        &report[0..internal_index],
+                        &report[internal_index + 1..report.len()],
+                    ]
+                    .concat();
+                    if is_report_safe(&sliced_index_report, false) {
                         break 'report_check;
                     }
                 }
@@ -56,7 +55,7 @@ fn is_level_pair_valid(first: &Level, second: &Level, initial_direction: &Report
     let distance = calc_distance(*second, *first);
     let direction = get_report_direction(&[*first, *second]);
 
-    !(first == second || distance < 1 || distance > 3 || direction != *initial_direction)
+    !(distance < 1 || distance > 3 || direction != *initial_direction)
 }
 
 // FIXME: this is not a good function, since may try to access an invalid index
