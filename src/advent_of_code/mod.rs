@@ -27,4 +27,10 @@ pub fn historian_hysteria() {
         "The result of the sum of multiplications is {}",
         multiplication_added_result
     );
+    let conditional_multiplication_added_result =
+        tue_03::mull_it_over_conditional("./assets/day_3_instruction_input");
+    println!(
+        "The result of the conditional sum of multiplications is {}",
+        conditional_multiplication_added_result
+    );
 }

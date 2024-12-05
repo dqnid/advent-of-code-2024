@@ -5,7 +5,7 @@ https://adventofcode.com/2024
 | :---: | :--- | :---: | :---: | :--- |
 | 01 | Historian Hysteria | :pushpin: | :pushpin: | Arrays |
 | 02 | Red-Nosed Reports | :pushpin: | :pushpin: | Bidirectional arrays |
-| 03 | Mull It Over |  |  | Regex |
+| 03 | Mull It Over | :pushpin: | :pushpin: | Regex |
 | 04 |  |  |  |
 | 05 |  |  |  |
 | 06 |  |  |  |
