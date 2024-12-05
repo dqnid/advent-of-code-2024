@@ -156,7 +156,6 @@ fn check_x_word_matches_from_center(matrix: &Vec<Vec<char>>, x: usize, y: usize)
 }
 
 fn is_string_mas(word: String) -> bool {
-    println!("Word: {}", word);
     word == "MAS" || word == "SAM"
 }
 

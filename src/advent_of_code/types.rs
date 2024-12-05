@@ -19,3 +19,7 @@ pub type MulNumber = i32;
 
 // Ceres Search
 pub type XMASCount = i32;
+
+// Print Queue
+pub struct Rule(pub u32, pub u32);
+pub type Queue = Vec<u32>;

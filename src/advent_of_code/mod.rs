@@ -1,5 +1,6 @@
 mod mon_02;
 mod sun_01;
+mod thu_05;
 mod tue_03;
 mod types;
 mod utils;
@@ -39,4 +40,8 @@ pub fn historian_hysteria() {
     let (xmas_appearances, x_mas_appearances) = wed_04::ceres_search("./assets/day_4_input");
     println!("XMAS appears {} times", xmas_appearances);
     println!("X-MAS appears {} times", x_mas_appearances);
+
+    // Thursday 05
+    let queue_mid_sum = thu_05::mid_queue_sum("./assets/day_5_rules_queue_input");
+    println!("The update mid-queue-sum is {}", queue_mid_sum);
 }

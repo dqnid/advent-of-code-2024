@@ -56,6 +56,36 @@ pub fn read_ceres_puzzle_input(input: &str) -> Vec<Vec<char>> {
     puzzle_input
 }
 
+pub fn read_rules_and_queue(input: &str) -> (Vec<Rule>, Vec<Queue>) {
+    let mut rules: Vec<Rule> = vec![];
+    let mut queues: Vec<Queue> = vec![];
+
+    let input_string = read_to_string(input).unwrap();
+    if let Some((rule_set, queue_list)) = input_string.split_once("\n\n") {
+        // process rules
+        for rule in rule_set.split("\n") {
+            if let Some((first, second)) = rule.split_once("|") {
+                rules.push(Rule(
+                    first.parse::<u32>().unwrap(),
+                    second.parse::<u32>().unwrap(),
+                ));
+            }
+        }
+        // process queues
+        for queue in queue_list.split("\n") {
+            if queue.len() > 0 {
+                let mut queue_vec: Queue = vec![];
+                for element in queue.split(",") {
+                    queue_vec.push(element.parse::<u32>().unwrap());
+                }
+                queues.push(queue_vec);
+            }
+        }
+    }
+
+    (rules, queues)
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
