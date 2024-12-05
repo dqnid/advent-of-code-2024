@@ -3,6 +3,7 @@ mod sun_01;
 mod tue_03;
 mod types;
 mod utils;
+mod wed_04;
 
 use types::*;
 
@@ -33,4 +34,8 @@ pub fn historian_hysteria() {
         "The result of the conditional sum of multiplications is {}",
         conditional_multiplication_added_result
     );
+
+    // Wednesday 04
+    let xmas_appearances = wed_04::ceres_search("./assets/day_4_input");
+    println!("XMAS appears {} times", xmas_appearances);
 }

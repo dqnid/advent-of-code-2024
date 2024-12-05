@@ -16,3 +16,6 @@ pub enum ReportDirection {
 
 // Mull It Over
 pub type MulNumber = i32;
+
+// Ceres Search
+pub type XMASCount = i32;

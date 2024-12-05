@@ -42,6 +42,20 @@ pub fn read_instruction_input(input: &str) -> String {
     instructions
 }
 
+pub fn read_ceres_puzzle_input(input: &str) -> Vec<Vec<char>> {
+    let mut puzzle_input: Vec<Vec<char>> = vec![];
+
+    for line in read_to_string(input).unwrap().lines() {
+        let mut line_vec: Vec<char> = vec![];
+        for character in line.chars().into_iter() {
+            line_vec.push(character);
+        }
+        puzzle_input.push(line_vec);
+    }
+
+    puzzle_input
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
