@@ -36,6 +36,7 @@ pub fn historian_hysteria() {
     );
 
     // Wednesday 04
-    let xmas_appearances = wed_04::ceres_search("./assets/day_4_input");
+    let (xmas_appearances, x_mas_appearances) = wed_04::ceres_search("./assets/day_4_input");
     println!("XMAS appears {} times", xmas_appearances);
+    println!("X-MAS appears {} times", x_mas_appearances);
 }

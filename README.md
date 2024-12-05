@@ -6,7 +6,7 @@ https://adventofcode.com/2024
 | 01 | Historian Hysteria | :pushpin: | :pushpin: | Arrays |
 | 02 | Red-Nosed Reports | :pushpin: | :pushpin: | Bidirectional arrays |
 | 03 | Mull It Over | :pushpin: | :pushpin: | Regex |
-| 04 | Ceres Search | :pushpin: |  | Matrix multidirectional search |
+| 04 | Ceres Search | :pushpin: | :pushpin: | Matrix multidirectional search |
 | 05 |  |  |  | |
 | 06 |  |  |  | |
 | 07 |  |  |  | |

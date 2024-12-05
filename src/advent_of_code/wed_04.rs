@@ -3,11 +3,13 @@ use utils::read_ceres_puzzle_input;
 use super::*;
 
 const SEARCHED_WORD: &str = "XMAS";
+const X_SEARCHED_WORD: &str = "MAS";
 
-pub fn ceres_search(input: &str) -> XMASCount {
+pub fn ceres_search(input: &str) -> (XMASCount, XMASCount) {
     let puzzle_matrix = read_ceres_puzzle_input(input);
 
     let mut match_count: XMASCount = 0;
+    let mut x_match_count: XMASCount = 0;
     // Loop through the chars
     for (line_index, line) in puzzle_matrix.iter().enumerate() {
         for (character_index, character) in line.iter().enumerate() {
@@ -19,10 +21,20 @@ pub fn ceres_search(input: &str) -> XMASCount {
                     SEARCHED_WORD,
                 );
             }
+
+            if *character
+                == X_SEARCHED_WORD
+                    .chars()
+                    .nth(SEARCHED_WORD.len() / 2 - 1)
+                    .unwrap()
+            {
+                x_match_count +=
+                    check_x_word_matches_from_center(&puzzle_matrix, character_index, line_index)
+            }
         }
     }
 
-    match_count
+    (match_count, x_match_count)
 }
 
 fn check_word_matches_from_start(
@@ -119,6 +131,33 @@ fn check_word_matches_from_start(
         + left_top_matches
         + right_bottom_matches
         + left_bottom_matches
+}
+
+// NOTE: V1: only works for MAS word, quite dirty tho...
+fn check_x_word_matches_from_center(matrix: &Vec<Vec<char>>, x: usize, y: usize) -> XMASCount {
+    if x < 1 || x > matrix[0].len() - 2 || y < 1 || y > matrix.len() - 2 {
+        return 0;
+    }
+
+    if is_string_mas(format!(
+        "{}{}{}",
+        matrix[y - 1][x - 1],
+        matrix[y][x],
+        matrix[y + 1][x + 1]
+    )) && is_string_mas(format!(
+        "{}{}{}",
+        matrix[y - 1][x + 1],
+        matrix[y][x],
+        matrix[y + 1][x - 1]
+    )) {
+        return 1;
+    }
+    0
+}
+
+fn is_string_mas(word: String) -> bool {
+    println!("Word: {}", word);
+    word == "MAS" || word == "SAM"
 }
 
 // WRONG: you did not understand the puzzle
