@@ -25,6 +25,7 @@ pub struct Rule(pub u32, pub u32);
 pub type Queue = Vec<u32>;
 
 // Guard Gallivant
+#[derive(Clone, Copy)]
 pub enum Direction {
     N,
     S,
@@ -38,6 +39,7 @@ pub enum Floor {
 pub type PositionCount = usize;
 pub type IsGuardOut = bool;
 pub type FloorMap = Vec<Vec<Floor>>;
+#[derive(Clone, Copy)]
 pub struct Guard {
     pub x: usize,
     pub y: usize,

@@ -48,6 +48,20 @@ impl Guard {
         false
     }
 
+    fn will_loop(&mut self, map: &FloorMap) -> bool {
+        let mut prev_positions: HashSet<(usize, usize, usize)> = HashSet::new();
+
+        while !self.step(map) {
+            let new_prev_position = (self.x, self.y, self.dir as usize);
+            if prev_positions.contains(&new_prev_position) {
+                return true;
+            }
+            prev_positions.insert(new_prev_position);
+        }
+
+        false
+    }
+
     fn turn_90(&mut self) {
         match self.dir {
             Direction::N => self.dir = Direction::E,
@@ -58,7 +72,7 @@ impl Guard {
     }
 }
 
-pub fn guard_gallivant(input: &str) -> PositionCount {
+pub fn guard_gallivant(input: &str) -> (PositionCount, usize) {
     let (mut the_guard, floor_map) = utils::read_floor_map_and_guard_input(input);
 
     let mut visited_coordinates: HashSet<(usize, usize)> = HashSet::new();
@@ -69,5 +83,16 @@ pub fn guard_gallivant(input: &str) -> PositionCount {
         visited_coordinates.insert((the_guard.x, the_guard.y));
     }
 
-    visited_coordinates.len()
+    let (the_guard, mut floor_map) = utils::read_floor_map_and_guard_input(input);
+    let mut loop_obstacles_count: usize = 0;
+    for visited in &visited_coordinates {
+        let mut temp_guard = the_guard.clone();
+        floor_map[visited.1][visited.0] = Floor::Obstacle;
+        if temp_guard.will_loop(&floor_map) {
+            loop_obstacles_count += 1;
+        }
+        floor_map[visited.1][visited.0] = Floor::Clear;
+    }
+
+    (visited_coordinates.len(), loop_obstacles_count)
 }
