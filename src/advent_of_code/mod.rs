@@ -1,3 +1,4 @@
+mod fri_06;
 mod mon_02;
 mod sun_01;
 mod thu_05;
@@ -46,4 +47,8 @@ pub fn historian_hysteria() {
         thu_05::mid_queue_sum("./assets/day_5_rules_queue_input");
     println!("The update mid-queue-sum is {}", queue_mid_sum);
     println!("The fixed update mid-queue-sum is {}", fixed_queue_mid_sum);
+
+    // Friday 06
+    let guard_position_count = fri_06::guard_gallivant("./assets/day_6_guard_map_input");
+    println!("The guard will visit {} positions", guard_position_count);
 }

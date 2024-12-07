@@ -8,7 +8,7 @@ https://adventofcode.com/2024
 | 03 | Mull It Over | :pushpin: | :pushpin: | Regex |
 | 04 | Ceres Search | :pushpin: | :pushpin: | Matrix multidirectional search |
 | 05 | Print Queue | :pushpin: | :pushpin: | Queue order |
-| 06 |  |  |  | |
+| 06 | Guard Gallivant | :pushpin: |  | 2D navigation |
 | 07 |  |  |  | |
 | 08 |  |  |  | |
 | 09 |  |  |  | |

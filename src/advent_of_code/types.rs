@@ -23,3 +23,23 @@ pub type XMASCount = i32;
 // Print Queue
 pub struct Rule(pub u32, pub u32);
 pub type Queue = Vec<u32>;
+
+// Guard Gallivant
+pub enum Direction {
+    N,
+    S,
+    E,
+    W,
+}
+pub enum Floor {
+    Clear,
+    Obstacle,
+}
+pub type PositionCount = usize;
+pub type IsGuardOut = bool;
+pub type FloorMap = Vec<Vec<Floor>>;
+pub struct Guard {
+    pub x: usize,
+    pub y: usize,
+    pub dir: Direction,
+}

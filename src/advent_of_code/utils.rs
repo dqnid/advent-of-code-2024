@@ -86,6 +86,45 @@ pub fn read_rules_and_queue(input: &str) -> (Vec<Rule>, Vec<Queue>) {
     (rules, queues)
 }
 
+pub fn read_floor_map_and_guard_input(input: &str) -> (Guard, FloorMap) {
+    let mut floor_map: FloorMap = vec![];
+    let mut the_guard: Guard = Guard {
+        x: 0,
+        y: 0,
+        dir: Direction::N,
+    };
+
+    for (line_index, line) in read_to_string(input).unwrap().lines().enumerate() {
+        let mut line_vec: Vec<Floor> = vec![];
+        for (character_index, character) in line.chars().into_iter().enumerate() {
+            match character {
+                '.' => line_vec.push(Floor::Clear),
+                '#' => line_vec.push(Floor::Obstacle),
+                '>' | '<' | '^' | 'v' => {
+                    let guard_direction: Direction = {
+                        match character {
+                            '>' => Direction::E,
+                            '<' => Direction::W,
+                            '^' => Direction::N,
+                            'v' => Direction::S,
+                            _ => Direction::N,
+                        }
+                    };
+                    the_guard.dir = guard_direction;
+                    the_guard.x = character_index;
+                    the_guard.y = line_index;
+                    line_vec.push(Floor::Clear);
+                }
+                _ => line_vec.push(Floor::Obstacle),
+            }
+        }
+
+        floor_map.push(line_vec);
+    }
+
+    (the_guard, floor_map)
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
