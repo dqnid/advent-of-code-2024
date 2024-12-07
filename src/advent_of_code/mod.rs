@@ -42,6 +42,8 @@ pub fn historian_hysteria() {
     println!("X-MAS appears {} times", x_mas_appearances);
 
     // Thursday 05
-    let queue_mid_sum = thu_05::mid_queue_sum("./assets/day_5_rules_queue_input");
+    let (queue_mid_sum, fixed_queue_mid_sum) =
+        thu_05::mid_queue_sum("./assets/day_5_rules_queue_input");
     println!("The update mid-queue-sum is {}", queue_mid_sum);
+    println!("The fixed update mid-queue-sum is {}", fixed_queue_mid_sum);
 }
