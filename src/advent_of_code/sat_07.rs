@@ -12,6 +12,12 @@ pub fn bridge_repair(input: &str) -> CalibrationResult {
         }
     }
 
+    println!("TEST");
+    for v in generate_operation_variants(3) {
+        println!("{:?}", v);
+    }
+    println!("====");
+
     sum_result
 }
 
@@ -36,12 +42,14 @@ pub fn generate_operation_variants(count: u32) -> Vec<Vec<Operation>> {
 
     let mut pset = Sieve::new(); // get prime numbers
 
-    let variant_num = 2i32.pow(count);
+    let variant_max = 2i32.pow(count);
 
-    for variant_index in 0..variant_num {
+    let square_free_list = generate_n_square_free_numbers(variant_max as usize);
+
+    for square_free_n in square_free_list {
         let mut new_vec: Vec<Operation> = vec![];
         for new_operand_index in 0..count {
-            match variant_index as u64 % pset.get(new_operand_index as usize) {
+            match square_free_n as u64 % pset.get(new_operand_index as usize) {
                 0 => new_vec.push(Operation::MUL),
                 _ => new_vec.push(Operation::SUM),
             }
@@ -50,6 +58,36 @@ pub fn generate_operation_variants(count: u32) -> Vec<Vec<Operation>> {
     }
 
     variant_list
+}
+
+pub fn generate_n_square_free_numbers(n: usize) -> Vec<u128> {
+    let mut list: Vec<u128> = vec![];
+
+    let mut current_n: u128 = 1234;
+    loop {
+        if list.len() == n {
+            break;
+        }
+
+        if is_square_free(current_n) {
+            list.push(current_n);
+        }
+
+        current_n += 1;
+    }
+
+    return list;
+}
+
+pub fn is_square_free(number: u128) -> bool {
+    let mut i = 2;
+    while i * i <= number {
+        if number % (i * i) == 0 {
+            return false;
+        }
+        i += 1
+    }
+    return true;
 }
 
 pub fn calc_operation(
