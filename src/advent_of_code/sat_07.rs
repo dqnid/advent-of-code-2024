@@ -29,7 +29,7 @@ pub fn is_equation_true(equation: &Calibration) -> bool {
 }
 
 pub fn generate_operation_variants(count: usize) -> Vec<Vec<Operation>> {
-    let variants = vec![Operation::MUL, Operation::SUM];
+    let variants = vec![Operation::MUL, Operation::SUM, Operation::COMB];
     let variant_list: Vec<Vec<Operation>> = generate_combinations(&variants, count);
 
     variant_list
@@ -79,6 +79,11 @@ pub fn operate(
         }
         Operation::MUL => {
             return first * second;
+        }
+        Operation::COMB => {
+            return format!("{}{}", second, first)
+                .parse::<CalibrationResult>()
+                .unwrap()
         }
     }
 }

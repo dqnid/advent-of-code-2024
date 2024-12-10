@@ -55,4 +55,5 @@ pub struct Calibration(pub CalibrationResult, pub CalibrationEquation);
 pub enum Operation {
     SUM,
     MUL,
+    COMB,
 }
