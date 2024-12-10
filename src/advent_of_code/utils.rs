@@ -144,6 +144,26 @@ pub fn read_calibration_equations(input: &str) -> Vec<Calibration> {
     calibration_list
 }
 
+pub fn read_antena_map_input(input: &str) -> (RoofMap, AntenaList) {
+    let mut roof_map: RoofMap = vec![];
+    let mut antena_list: AntenaList = vec![];
+
+    for (line_index, line) in read_to_string(input).unwrap().lines().enumerate() {
+        let mut line_vec: RoofRow = vec![];
+        for (character_index, character) in line.chars().into_iter().enumerate() {
+            if character == '.' {
+                line_vec.push(None);
+            } else {
+                line_vec.push(Some(character));
+                antena_list.push(Antena(line_index, character_index, character));
+            }
+        }
+        roof_map.push(line_vec);
+    }
+
+    (roof_map, antena_list)
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,

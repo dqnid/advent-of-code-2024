@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 // Historian Hysteria - Day 1
 pub type Id = i32;
 pub type Key = Id;
@@ -57,3 +59,15 @@ pub enum Operation {
     MUL,
     COMB,
 }
+
+// Resonant collinearity
+pub type RoofRow = Vec<Option<char>>;
+pub type RoofMap = Vec<RoofRow>;
+
+#[derive(Debug, PartialEq)]
+pub struct Antena(pub usize, pub usize, pub char); //y,x,freq
+pub type AntenaList = Vec<Antena>;
+
+pub type AntinodeCount = usize;
+pub type Antinode = (usize, usize);
+pub type AntinodeList = HashSet<Antinode>;

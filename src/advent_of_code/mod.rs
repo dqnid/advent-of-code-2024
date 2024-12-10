@@ -4,7 +4,8 @@
 // mod thu_05;
 // mod tue_03;
 // mod wed_04;
-mod sat_07;
+// mod sat_07;
+mod sun_08;
 mod types;
 mod utils;
 
@@ -57,6 +58,10 @@ pub fn historian_hysteria() {
     // println!("The guard would loop on {} positions", loop_obstacle_count);
 
     // Saturday 07
-    let calibration_result = sat_07::bridge_repair("./assets/day_7_calibrations_input");
-    println!("The total calibration result is {}", calibration_result);
+    // let calibration_result = sat_07::bridge_repair("./assets/day_7_calibrations_input");
+    // println!("The total calibration result is {}", calibration_result);
+
+    // Sunday 08
+    let antinode_count = sun_08::resonant_collinearity("./assets/day_8_antena_map_input");
+    println!("The total antinode positions is {}", antinode_count);
 }

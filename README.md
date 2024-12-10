@@ -9,8 +9,8 @@ https://adventofcode.com/2024
 | 04 | Ceres Search | :pushpin: | :pushpin: | Matrix multidirectional search |
 | 05 | Print Queue | :pushpin: | :pushpin: | Queue order |
 | 06 | Guard Gallivant | :pushpin: | :pushpin: | 2D navigation |
-| 07 | Bridge Repair | :pushpin: |  | Equation parsing |
-| 08 |  |  |  | |
+| 07 | Bridge Repair | :pushpin: | :pushpin: | Equation parsing |
+| 08 | Resonant Collinearity |  |  | |
 | 09 |  |  |  | |
 | 10 |  |  |  | |
 | 11 |  |  |  | |
