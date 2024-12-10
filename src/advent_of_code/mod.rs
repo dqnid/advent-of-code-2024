@@ -1,11 +1,12 @@
-mod fri_06;
-mod mon_02;
-mod sun_01;
-mod thu_05;
-mod tue_03;
+// mod fri_06;
+// mod mon_02;
+// mod sun_01;
+// mod thu_05;
+// mod tue_03;
+// mod wed_04;
+mod sat_07;
 mod types;
 mod utils;
-mod wed_04;
 
 use types::*;
 
@@ -50,8 +51,12 @@ pub fn historian_hysteria() {
     // println!("The fixed update mid-queue-sum is {}", fixed_queue_mid_sum);
 
     // Friday 06
-    let (guard_position_count, loop_obstacle_count) =
-        fri_06::guard_gallivant("./assets/day_6_guard_map_input");
-    println!("The guard will visit {} positions", guard_position_count);
-    println!("The guard would loop on {} positions", loop_obstacle_count);
+    // let (guard_position_count, loop_obstacle_count) =
+    //     fri_06::guard_gallivant("./assets/day_6_guard_map_input");
+    // println!("The guard will visit {} positions", guard_position_count);
+    // println!("The guard would loop on {} positions", loop_obstacle_count);
+
+    // Saturday 07
+    let calibration_result = sat_07::bridge_repair("./assets/day_7_calibrations_input");
+    println!("The total calibration result is {}", calibration_result);
 }

@@ -45,3 +45,14 @@ pub struct Guard {
     pub y: usize,
     pub dir: Direction,
 }
+
+// Bridge repair
+pub type CalibrationResult = u128;
+pub type CalibrationEquation = Vec<CalibrationResult>;
+pub struct Calibration(pub CalibrationResult, pub CalibrationEquation);
+
+#[derive(Debug, Clone, Copy)]
+pub enum Operation {
+    SUM,
+    MUL,
+}

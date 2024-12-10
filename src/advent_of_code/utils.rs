@@ -125,6 +125,25 @@ pub fn read_floor_map_and_guard_input(input: &str) -> (Guard, FloorMap) {
     (the_guard, floor_map)
 }
 
+pub fn read_calibration_equations(input: &str) -> Vec<Calibration> {
+    let mut calibration_list: Vec<Calibration> = vec![];
+
+    for line in read_to_string(input).unwrap().lines() {
+        if let Some((test_value, equation_values)) = line.split_once(": ") {
+            let mut values: CalibrationEquation = vec![];
+            for equation_value in equation_values.split(" ") {
+                values.push(equation_value.parse::<CalibrationResult>().unwrap());
+            }
+            calibration_list.push(Calibration(
+                test_value.parse::<CalibrationResult>().unwrap(),
+                values,
+            ));
+        }
+    }
+
+    calibration_list
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
