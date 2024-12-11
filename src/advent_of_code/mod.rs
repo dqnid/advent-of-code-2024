@@ -62,6 +62,11 @@ pub fn historian_hysteria() {
     // println!("The total calibration result is {}", calibration_result);
 
     // Sunday 08
-    let antinode_count = sun_08::resonant_collinearity("./assets/day_8_antena_map_input");
+    let (antinode_count, antinode_count_any) =
+        sun_08::resonant_collinearity("./assets/day_8_antena_map_input");
     println!("The total antinode positions is {}", antinode_count);
+    println!(
+        "The total antinode positions in any grid is {}",
+        antinode_count_any
+    );
 }
