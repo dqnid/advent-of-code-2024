@@ -10,7 +10,7 @@ https://adventofcode.com/2024
 | 05 | Print Queue | :pushpin: | :pushpin: | Queue order |
 | 06 | Guard Gallivant | :pushpin: | :pushpin: | 2D navigation |
 | 07 | Bridge Repair | :pushpin: | :pushpin: | Equation parsing |
-| 08 | Resonant Collinearity |  |  | |
+| 08 | Resonant Collinearity | :pushpin: |  | Matrix exploration |
 | 09 |  |  |  | |
 | 10 |  |  |  | |
 | 11 |  |  |  | |
