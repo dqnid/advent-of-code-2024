@@ -164,6 +164,29 @@ pub fn read_antena_map_input(input: &str) -> (RoofMap, AntenaList) {
     (roof_map, antena_list)
 }
 
+pub fn read_disk_map_input(input: &str) -> DiskMap {
+    let mut disk_map: DiskMap = vec![];
+    let raw_map = read_to_string(input).unwrap();
+
+    let mut id: usize = 0;
+    for (digit_index, char_digit) in raw_map.chars().enumerate() {
+        if let Some(digit) = char_digit.to_digit(10u32) {
+            for _ in 0..digit {
+                if digit_index % 2 == 0 {
+                    disk_map.push(Some(id));
+                } else {
+                    disk_map.push(None);
+                }
+            }
+            if digit_index % 2 == 0 {
+                id += 1;
+            }
+        }
+    }
+
+    disk_map
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,

@@ -71,3 +71,7 @@ pub type AntenaList = Vec<Antena>;
 pub type AntinodeCount = usize;
 pub type Antinode = (usize, usize);
 pub type AntinodeList = HashSet<Antinode>;
+
+// Disk fragmenter
+pub type Block = Option<usize>;
+pub type DiskMap = Vec<Block>;

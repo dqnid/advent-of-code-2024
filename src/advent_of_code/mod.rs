@@ -1,11 +1,12 @@
-// mod fri_06;
-// mod mon_02;
 // mod sun_01;
-// mod thu_05;
+// mod mon_02;
 // mod tue_03;
 // mod wed_04;
+// mod thu_05;
+// mod fri_06;
 // mod sat_07;
-mod sun_08;
+// mod sun_08;
+mod mon_09;
 mod types;
 mod utils;
 
@@ -17,6 +18,7 @@ pub fn today() {
 
 pub fn historian_hysteria() {
     // NOTE: previous days are commented to speed up (all the blame is on day 6)
+
     // Sunday 01
     // let key = sun_01::get_key("./assets/day_1_input").unwrap();
     // println!("The key is: {key}");
@@ -62,11 +64,14 @@ pub fn historian_hysteria() {
     // println!("The total calibration result is {}", calibration_result);
 
     // Sunday 08
-    let (antinode_count, antinode_count_any) =
-        sun_08::resonant_collinearity("./assets/day_8_antena_map_input");
-    println!("The total antinode positions is {}", antinode_count);
-    println!(
-        "The total antinode positions in any grid is {}",
-        antinode_count_any
-    );
+    // let (antinode_count, antinode_count_any) =
+    //     sun_08::resonant_collinearity("./assets/day_8_antena_map_input");
+    // println!("The total antinode positions is {}", antinode_count);
+    // println!(
+    //     "The total antinode positions in any grid is {}",
+    //     antinode_count_any
+    // );
+
+    // Monday 09
+    let disk_checksum = mon_09::disk_fragmenter("./assets/day_9_disk_input");
 }
