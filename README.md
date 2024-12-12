@@ -11,7 +11,7 @@ https://adventofcode.com/2024
 | 06 | Guard Gallivant | :pushpin: | :pushpin: | 2D navigation |
 | 07 | Bridge Repair | :pushpin: | :pushpin: | Equation parsing |
 | 08 | Resonant Collinearity | :pushpin: |  | Matrix exploration |
-| 09 | Disk fragmenter |  |  | |
+| 09 | Disk fragmenter | :pushpin: |  | Array indexing |
 | 10 |  |  |  | |
 | 11 |  |  |  | |
 | 12 |  |  |  | |

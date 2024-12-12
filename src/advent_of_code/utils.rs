@@ -170,16 +170,18 @@ pub fn read_disk_map_input(input: &str) -> DiskMap {
 
     let mut id: usize = 0;
     for (digit_index, char_digit) in raw_map.chars().enumerate() {
-        if let Some(digit) = char_digit.to_digit(10u32) {
-            for _ in 0..digit {
-                if digit_index % 2 == 0 {
-                    disk_map.push(Some(id));
-                } else {
-                    disk_map.push(None);
+        if let Some(digit) = char_digit.to_digit(10) {
+            if digit > 0 {
+                for _ in 0..digit {
+                    if digit_index % 2 == 0 {
+                        disk_map.push(Some(id));
+                    } else {
+                        disk_map.push(None);
+                    }
                 }
-            }
-            if digit_index % 2 == 0 {
-                id += 1;
+                if digit_index % 2 == 0 {
+                    id += 1;
+                }
             }
         }
     }
