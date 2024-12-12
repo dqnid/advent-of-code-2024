@@ -75,3 +75,4 @@ pub type AntinodeList = HashSet<Antinode>;
 // Disk fragmenter
 pub type Block = Option<usize>;
 pub type DiskMap = Vec<Block>;
+pub type DiskChecksum = usize;

@@ -74,4 +74,5 @@ pub fn historian_hysteria() {
 
     // Monday 09
     let disk_checksum = mon_09::disk_fragmenter("./assets/day_9_disk_input");
+    println!("The disk checksum is {}", disk_checksum);
 }
