@@ -6,7 +6,8 @@
 // mod fri_06;
 // mod sat_07;
 // mod sun_08;
-mod mon_09;
+// mod mon_09;
+mod tue_10;
 mod types;
 mod utils;
 
@@ -73,6 +74,10 @@ pub fn historian_hysteria() {
     // );
 
     // Monday 09
-    let disk_checksum = mon_09::disk_fragmenter("./assets/day_9_disk_input");
-    println!("The disk checksum is {}", disk_checksum);
+    // let disk_checksum = mon_09::disk_fragmenter("./assets/day_9_disk_input");
+    // println!("The disk checksum is {}", disk_checksum);
+
+    // Tuesday 10
+    let trailhead_score = tue_10::hoof_it(".");
+    println!("The trail head sum score is {}", trailhead_score);
 }

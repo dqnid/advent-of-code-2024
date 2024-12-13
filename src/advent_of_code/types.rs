@@ -76,3 +76,6 @@ pub type AntinodeList = HashSet<Antinode>;
 pub type Block = Option<usize>;
 pub type DiskMap = Vec<Block>;
 pub type DiskChecksum = usize;
+
+// Hoof it
+pub type TrailScore = usize;
