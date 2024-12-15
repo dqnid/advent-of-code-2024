@@ -13,7 +13,7 @@ https://adventofcode.com/2024
 | 08 | Resonant Collinearity | :pushpin: |  | Matrix exploration |
 | 09 | Disk fragmenter | :pushpin: |  | Array indexing |
 | 10 | Hoof It | :pushpin: | :pushpin: | Path finding |
-| 11 |  |  |  | |
+| 11 | Plutonian Pebbles | :pushpin: |  | Array and digit manipulation |
 | 12 |  |  |  | |
 | 13 |  |  |  | |
 | 14 |  |  |  | |

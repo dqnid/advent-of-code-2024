@@ -81,3 +81,8 @@ pub type DiskChecksum = usize;
 pub type TrailScore = usize;
 pub type TrailPosition = usize;
 pub type TrailMap = Vec<Vec<TrailPosition>>;
+
+// Plutonian Pebbles
+pub type StoneCount = usize;
+pub type Stone = usize;
+pub type StoneList = Vec<Stone>;

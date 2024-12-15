@@ -206,6 +206,18 @@ pub fn read_trail_map_input(input: &str) -> TrailMap {
     trail_map
 }
 
+pub fn read_stone_arrangement(input: &str) -> StoneList {
+    let mut stone_list: StoneList = vec![];
+
+    for line in read_to_string(input).unwrap().lines() {
+        for number in line.split(" ") {
+            stone_list.push(number.parse::<Stone>().unwrap());
+        }
+    }
+
+    stone_list
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
