@@ -1,4 +1,5 @@
 use std::fs::read_to_string;
+use std::io::read_to_string;
 use std::ops::Sub;
 
 use super::*;
@@ -216,6 +217,20 @@ pub fn read_stone_arrangement(input: &str) -> StoneList {
     }
 
     stone_list
+}
+
+pub fn read_garden_arrangement_input(input: &str) -> Garden {
+    let mut garden: Garden = vec![];
+
+    for line in read_to_string(input).unwrap().lines() {
+        let mut garden_row: Vec<Plant> = vec![];
+        for plant in line.chars() {
+            garden_row.push(plant);
+        }
+        garden.push(garden_row);
+    }
+
+    garden
 }
 
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T

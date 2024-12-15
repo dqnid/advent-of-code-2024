@@ -8,9 +8,10 @@
 // mod sun_08;
 // mod mon_09;
 // mod tue_10;
+// mod wed_11;
+mod thu_12;
 mod types;
 mod utils;
-mod wed_11;
 
 use types::*;
 
@@ -83,11 +84,18 @@ pub fn historian_hysteria() {
     //     tue_10::hoof_it("./assets/day_10_trail_map_input");
     // println!("The trail head sum score is {}", trailhead_score);
     // println!("The full trail head sum score is {}", full_trailhead_score);
-    let blink_count: usize = 25;
-    let stone_count =
-        wed_11::plutonian_pebbles("./assets/day_11_stone_arrangement_input", blink_count);
-    println!(
-        "The total of stones after {} is {}",
-        blink_count, stone_count
-    );
+    // let blink_count: usize = 25;
+    // let stone_count =
+    //     wed_11::plutonian_pebbles("./assets/day_11_stone_arrangement_input", blink_count);
+    // println!(
+    //     "The total of stones after {} is {}",
+    //     blink_count, stone_count
+    // );
+    // let blink_count: usize = 75;
+    // let stone_count =
+    //     wed_11::plutonian_pebbles("./assets/day_11_stone_arrangement_input", blink_count);
+    // println!(
+    //     "The total of stones after {} is {}",
+    //     blink_count, stone_count
+    // );
 }

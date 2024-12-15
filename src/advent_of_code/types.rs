@@ -86,3 +86,7 @@ pub type TrailMap = Vec<Vec<TrailPosition>>;
 pub type StoneCount = usize;
 pub type Stone = usize;
 pub type StoneList = Vec<Stone>;
+
+// Garden Groups
+pub type Plant = char;
+pub type Garden = Vec<Vec<char>>;

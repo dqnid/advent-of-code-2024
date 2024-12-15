@@ -8,14 +8,12 @@ pub fn plutonian_pebbles(input: &str, blink_count: usize) -> StoneCount {
     stone_list.len()
 }
 
-fn apply_rules(stone_list: StoneList, blink_count: usize) -> StoneList {
-    let mut new_stone_list = stone_list.clone();
-
+fn apply_rules(mut stone_list: StoneList, blink_count: usize) -> StoneList {
     for _ in 0..blink_count {
-        new_stone_list = blink(new_stone_list);
+        stone_list = blink(stone_list);
     }
 
-    new_stone_list
+    stone_list
 }
 
 fn blink(stone_list: StoneList) -> StoneList {
