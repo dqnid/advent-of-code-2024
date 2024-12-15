@@ -79,3 +79,5 @@ pub type DiskChecksum = usize;
 
 // Hoof it
 pub type TrailScore = usize;
+pub type TrailPosition = usize;
+pub type TrailMap = Vec<Vec<TrailPosition>>;

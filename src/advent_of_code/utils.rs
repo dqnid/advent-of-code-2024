@@ -189,6 +189,23 @@ pub fn read_disk_map_input(input: &str) -> DiskMap {
     disk_map
 }
 
+pub fn read_trail_map_input(input: &str) -> TrailMap {
+    let mut trail_map: TrailMap = vec![];
+
+    for line in read_to_string(input).unwrap().lines() {
+        let mut trail_row: Vec<usize> = vec![];
+        for position in line.chars() {
+            if let Some(digit) = position.to_digit(10) {
+                trail_row.push(digit as usize);
+            }
+        }
+
+        trail_map.push(trail_row);
+    }
+
+    trail_map
+}
+
 pub fn calc_distance<T>(num_1: T, num_2: T) -> T
 where
     T: PartialOrd + Sub<Output = T>,
