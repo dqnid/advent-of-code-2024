@@ -12,7 +12,7 @@ https://adventofcode.com/2024
 | 07 | Bridge Repair | :pushpin: | :pushpin: | Equation parsing |
 | 08 | Resonant Collinearity | :pushpin: |  | Matrix exploration |
 | 09 | Disk fragmenter | :pushpin: |  | Array indexing |
-| 10 | Hoof It |  |  | |
+| 10 | Hoof It | :pushpin: |  | Path finding |
 | 11 |  |  |  | |
 | 12 |  |  |  | |
 | 13 |  |  |  | |
