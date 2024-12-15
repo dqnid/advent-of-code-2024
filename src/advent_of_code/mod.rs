@@ -78,6 +78,8 @@ pub fn historian_hysteria() {
     // println!("The disk checksum is {}", disk_checksum);
 
     // Tuesday 10
-    let trailhead_score = tue_10::hoof_it("./assets/day_10_trail_map_input");
+    let (trailhead_score, full_trailhead_score) =
+        tue_10::hoof_it("./assets/day_10_trail_map_input");
     println!("The trail head sum score is {}", trailhead_score);
+    println!("The full trail head sum score is {}", full_trailhead_score);
 }
