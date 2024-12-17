@@ -90,3 +90,16 @@ pub type StoneList = Vec<Stone>;
 // Garden Groups
 pub type Plant = char;
 pub type Garden = Vec<Vec<char>>;
+
+#[derive(PartialEq)]
+pub struct Coordinate {
+    pub x: usize,
+    pub y: usize,
+}
+pub struct Plot {
+    pub plant: Plant,
+    pub side_count: usize,
+    pub plant_list: Vec<Coordinate>,
+}
+
+pub type PlotList = Vec<Plot>;
