@@ -98,4 +98,8 @@ pub fn historian_hysteria() {
     //     "The total of stones after {} is {}",
     //     blink_count, stone_count
     // );
+
+    // Thursday 12
+    let fence_cost = thu_12::garden_groups("./assets/day_12_garden_input");
+    println!("The garden fence total cost is {}", fence_cost);
 }
